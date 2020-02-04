@@ -1,0 +1,15 @@
+<div class="content-block">
+  <div class="content">
+    <div class="matches" *ngFor="let match of matches">
+      <a href="/match/{{match?.matchEntity?.id}}" class="selectable">
+      <div class="match">
+        <p class="time normal-text">{{match?.matchEntity?.etime | date:'d MMMM y'}}</p>
+        <p class="rating normal-text">{{match?.matchEntity?.rating ? 'Рейтинг' : 'Паблик' }}</p>
+        <div class="players" *ngFor="let playerResult of match?.playerResultEntities">
+          <img class="avatar {{playerResult?.winner? 'winner':''}}" [src]="styleService.getAvatar(playerResult.playerEntity)">
+        </div>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>

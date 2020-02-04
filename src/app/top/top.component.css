@@ -1,0 +1,30 @@
+.content{
+  display: flex;
+  flex-direction: column;
+}
+.header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+app-player-row{
+  padding: 1% 0;
+}
+.place{
+}
+.player {
+  width: 180px;
+}
+.mmr{
+
+}
+.win{
+  width: 50px;
+}
+.match{
+  width: 50px;
+}
+.faction{
+  width: 200px;
+}
+

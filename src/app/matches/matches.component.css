@@ -1,0 +1,32 @@
+.avatar{
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+  margin-left: 1%;
+}
+.matches{
+  display: flex;
+  flex-direction: column;
+}
+.match{
+  margin: 1% -20% 0% 5%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.time{
+  width: 20%;
+}
+.rating{
+  width: 20%;
+}
+.winner{
+  border-style : solid;
+  border-color: var(--smaj-green);
+}
+@media screen and (max-width: 767px){
+  .avatar{
+    width: 40px;
+    height: 40px;
+  }
+}

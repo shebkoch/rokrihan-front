@@ -1,0 +1,9 @@
+<div class="content-block">
+  <p class="big-text">Последние матчи</p>
+  <div class="content">
+    <app-result-row *ngIf="results?.length>0" [result]="results[0]"></app-result-row>
+    <app-result-row *ngIf="results?.length>1" [result]="results[1]"></app-result-row>
+    <app-result-row *ngIf="results?.length>2" [result]="results[2]"></app-result-row>
+    <app-result-row *ngIf="results?.length>3" [result]="results[3]"></app-result-row>
+  </div>
+</div>

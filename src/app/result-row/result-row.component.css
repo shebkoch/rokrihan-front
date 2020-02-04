@@ -1,0 +1,110 @@
+.dur{
+  width: 25%;
+}
+.ago{
+  width: 25%;
+}
+.win{
+  width: 20%;
+}
+.fact{
+  width: 35%;
+}
+.bars-block{
+  width: 10%;
+}
+.result-content{
+  padding-left: 2em;
+  padding-right: 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.score{
+  /*color: #484c60;*/
+}
+.bars{
+  margin-bottom: 10%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.thisScore{
+  border-radius: 6px 0 0 6px;
+  background-color: var(--smaj-green);
+  height: 4px;
+}
+.key-value-block{
+  line-height: 0;
+}
+.maxScore{
+  height: 4px;
+  border-radius: 0 6px 6px 0;
+  background-color: var(--smaj-red);
+}
+.green{
+  color: var(--smaj-green);
+}
+.red{
+  color: var(--smaj-red);
+}
+.avatar{
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  position: relative;
+}
+.right{
+  right: 20px;
+}
+.factions{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.faction-images{
+  display: flex;
+  align-items: center;
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+.avatar{
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.name{
+  margin-left: 1em;
+}
+
+.player{
+  width: 200px;
+  display: flex;
+  flex-direction: row;
+}
+
+@media screen and (max-width: 767px){
+  .dur{
+    display: none;
+  }
+  .factNames{
+    display: none;
+  }
+  .avatar{
+    width: 40px;
+    height: 40px;
+  }
+  .fact{
+    width: 25%;
+  }
+  .ago.key-value-block{
+    line-height: 1;
+  }
+}

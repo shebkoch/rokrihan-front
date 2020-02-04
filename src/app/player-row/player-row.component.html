@@ -1,0 +1,16 @@
+<div>
+  <a [href]="'player/' + player.id">
+    <div class="selectable content">
+      <p class="place big-text">{{place ? place : ''}}</p>
+      <div class="player">
+        <img class="avatar" [src]="getAvatar()">
+        <p class="name normal-text">{{player?.name}}</p>
+      </div>
+      <p class="mmr normal-text">{{player?.mmr}}</p>
+      <p class="win normal-text">{{player?.winCount}}</p>
+      <p class="match normal-text">{{player?.matchCount}}</p>
+      <p class="faction normal-text"
+         [ngStyle]="{'color' : getColor(player?.bestFactionEntity)}">{{player?.bestFactionEntity?.name}}</p>
+    </div>
+  </a>
+</div>

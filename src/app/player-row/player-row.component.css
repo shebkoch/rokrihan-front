@@ -1,0 +1,45 @@
+a{
+  text-decoration: none
+}
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+
+}
+.avatar{
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+.name{
+  margin-left: 1em;
+}
+
+.player{
+  display: flex;
+  flex-direction: row;
+}
+.place{
+  line-height: 0;
+  /*font-size: 40px;*/
+}
+.mmr{
+
+}
+.win{
+  width: 5%;
+}
+.match{
+  width: 5%;
+}
+.faction{
+  width: 20%;
+}
+@media screen and (max-width: 767px){
+  .avatar{
+    width: 50px;
+    height: 50px;
+  }
+}

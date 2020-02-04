@@ -1,0 +1,41 @@
+
+<div class="avatar">
+  <img class="avatar" [src]=img>
+  <p class="big-text">{{player?.name}}</p>
+</div>
+
+<div class="content-block">
+  <div class="main-info">
+    <div class="key-value-block">
+      <p class="normal-text">матчи</p>
+      <p class="big-text" style="color: #d2977e">{{player?.matchCount}}</p>
+    </div>
+    <div class="key-value-block">
+      <p class="normal-text">победы</p>
+      <p class="big-text" style="color: var(--smaj-green)">{{player?.winCount}}</p>
+    </div>
+    <div class="key-value-block">
+      <p class="normal-text">% побед</p>
+      <p class="big-text">{{winPercent | number: '1.0-1'}}%</p>
+
+
+    </div>
+    <div class="key-value-block">
+      <p class="normal-text">ммр</p>
+      <p class="big-text">{{player?.mmr}}</p>
+    </div>
+    <div class="key-value-block">
+      <p class="normal-text">лучшая фракция</p>
+      <p class="best big-text"
+         [ngStyle]="{'color' :  styleService.getColor(player?.bestFactionEntity)}">{{player?.bestFactionEntity?.name}}</p>
+    </div>
+  </div>
+  <div *ngIf="lastResult!=null" class="last-result">
+    <div>
+      <p class="normal-text last-match">Последний матч</p>
+    </div>
+    <app-result-row [result]="lastResult"></app-result-row>
+  </div>
+</div>
+<app-top></app-top>
+<app-last-matches></app-last-matches>

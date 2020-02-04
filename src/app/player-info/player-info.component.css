@@ -1,0 +1,36 @@
+:host {
+  width: 100%;
+}
+.main-info{
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 5% 0 4% 0;
+}
+.avatar{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.avatar img{
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
+}
+.last-result{
+  padding: 1% 0 2% 0;
+}
+.last-match{
+  padding-left: 1.5em;
+  text-align: left;
+  line-height: 0;
+}
+.best{
+  max-width: 250px;
+  line-height: inherit;
+  font-size: 35px;
+}
+.big-text{
+  line-height: inherit;
+}

@@ -1,0 +1,44 @@
+<a [href]="'match/'+result?.matchEntity?.id">
+  <div class="selectable result-content">
+    <div *ngIf="!matchInfo" class="player">
+      <img class="avatar" [src]="this.styleService.getAvatar(result?.playerEntity)">
+      <p class="name normal-text">{{result?.playerEntity?.name}}</p>
+    </div>
+    <div *ngIf="matchInfo" class="key-value-block ago">
+      <!--        TODO-->
+      <p class="normal-text">{{lastTime(result?.matchEntity.etime)}}</p>
+      <p class="mini-text">{{result?.matchEntity?.rating ? 'Рейтинг' : 'Паблик' }}</p>
+    </div>
+    <div *ngIf="matchInfo" class="key-value-block dur">
+      <!--        TODO-->
+      <p class="normal-text">{{duration()}}</p>
+      <!--        <p class="mini-text">мин</p>-->
+    </div>
+    <div class="key-value-block win">
+      <!--        TODO-->
+      <p class="normal-text"
+         [ngClass]="result?.winner ? 'green' : 'red'">{{result?.winner ? 'Победа' : 'Поражение'}}</p>
+      <p class="mini-text"
+         [ngClass]="result?.mmrChange> 0 ? 'green' : 'red'"> {{result?.mmrChange > 0 ? '+' : ''}}{{ result?.mmrChange }}</p>
+    </div>
+    <div class="factions fact">
+      <div class="faction-images">
+        <img class="avatar" src="{{imagePath(result?.factionEntity1)}}">
+        <img class="avatar right" src="{{imagePath(result?.factionEntity2)}}">
+      </div>
+      <div class="factNames key-value-block">
+        <p class="mini-text"
+           [ngStyle]="{'color' : styleService.getColor(result?.factionEntity1)}"> {{result?.factionEntity1?.name}}</p>
+        <p class="mini-text"
+           [ngStyle]="{'color' : styleService.getColor(result?.factionEntity2)}">{{result?.factionEntity2?.name}}</p>
+      </div>
+    </div>
+    <div class="key-value-block bars-block">
+      <p class="score mini-text">{{result?.score}}/{{result?.matchEntity?.winnerScore}}</p>
+      <div class="bars">
+        <div class="bar thisScore" [ngStyle]="{'width.%': scoreWidth()}"></div>
+        <div class="bar maxScore" [ngStyle]="{'width.%': maxScoreWidth()}"></div>
+      </div>
+    </div>
+  </div>
+</a>

@@ -1,0 +1,33 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  margin: 3% 0;
+}
+.content-block{
+  margin-top: 2%;
+}
+table{
+  color: var(--smaj-content-background);
+}
+
+td{
+  text-align: left;
+  width: 10%;
+  padding: 0 5%;
+  color: var(--smaj-content-background);
+}
+td p{
+  text-align: left;
+}
+td.mat-cell{
+  border-bottom-style: none;
+}
+.mat-table{
+  background: var(--smaj-content-background)!important;
+}
+th.mat-header-cell{
+  border-bottom-style: none;
+}
+::ng-deep .hide-arrow .mat-sort-header-arrow {
+  color: white;
+}

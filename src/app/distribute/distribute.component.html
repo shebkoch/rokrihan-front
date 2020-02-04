@@ -1,0 +1,85 @@
+<div class="content-block">
+  <div class="content">
+    <div *ngIf="!generated" class="distribute">
+      <div class="faction">
+        <p class="mini-text">Фракции</p>
+        <label>
+          <p class="all mini-text">
+            <input [(ngModel)]="allFactions" type="checkbox"/> Все
+          </p>
+        </label>
+        <label *ngFor="let faction of factions">
+          <p [ngStyle]="{'color': getColor(faction.factionEntity1)}" class="mini-text">
+            <input [(ngModel)]="faction.checked" type="checkbox"/> {{faction.factionEntity1.name}}
+          </p>
+          <p [ngStyle]="{'color': getColor(faction.factionEntity2)}" class="mini-text">
+            <input [(ngModel)]="faction.checked" type="checkbox"/> {{faction.factionEntity2.name}}
+          </p>
+        </label>
+<!--        <div class=faction-label *ngFor="let faction of factions">-->
+<!--        <label>-->
+<!--          <input [(ngModel)]="faction.checked" type="checkbox"/>-->
+<!--        </label>-->
+<!--          <div class="faction-p">-->
+<!--          <p [ngStyle]="{'color': getColor(faction.factionEntity1)}" class="mini-text">-->
+<!--             {{faction.factionEntity1.name}}-->
+<!--          </p>-->
+<!--          <p [ngStyle]="{'color': getColor(faction.factionEntity2)}" class="mini-text">-->
+<!--             {{faction.factionEntity2.name}}-->
+<!--          </p>-->
+<!--          </div>-->
+<!--        </div>-->
+      </div>
+      <div class="players">
+        <p class="mini-text">Игроки</p>
+        <label>
+          <p class="all mini-text">
+            <input [(ngModel)]="allPlayers" type="checkbox"/> Все
+          </p>
+        </label>
+        <label *ngFor="let player of players">
+          <p class="mini-text">
+            <input [(ngModel)]="player.checked" type="checkbox"/> {{player.name}}
+          </p>
+        </label>
+      </div>
+      <button (click)="submit()" class="button"><p class="normal-text">Сгенерировать</p></button>
+    </div>
+    <div *ngIf="generated" class="start">
+      <div class="start-content">
+        <div class="player" *ngFor="let item of data">
+          <div class="player-content">
+            <div class="key-value-block">
+              <p class="mini-text">{{item.key.name}}</p>
+              <img class="avatar" [src]="getAvatar(item.key)">
+            </div>
+            <div class="factions">
+              <div class="key-value-block">
+                <p class="mini-text">{{item.value.factionEntity1.name}}</p>
+                <img class="avatar" [src]="getImg(item.value.factionEntity1)">
+              </div>
+              <div class="key-value-block">
+                <p class="mini-text">{{item.value.factionEntity2.name}}</p>
+                <img class="avatar" [src]="getImg(item.value.factionEntity2)">
+              </div>
+            </div>
+          </div>
+                    <label class="scoreCount" *ngIf="isStart">
+                      <p class="mini-text">Очки</p>
+                      <input class="mini-text" [(ngModel)]="item.score"/>
+                      <p class="mini-text">
+                        <input [(ngModel)]="item.checked" type="checkbox"/> Победитель
+                      </p>
+                    </label>
+        </div>
+      </div>
+
+      <div class="buttons">
+        <button *ngIf="!isStart" (click)="reroll()" class="button"><p class="normal-text">Заменить</p></button>
+        <button *ngIf="!isStart" (click)="start()" class="button"><p class="normal-text">Начать</p></button>
+        <button *ngIf="isStart" (click)="end()" class="button"><p class="normal-text">Сохранить</p></button>
+      </div>
+    </div>
+  </div>
+<!--   && canView-->
+</div>

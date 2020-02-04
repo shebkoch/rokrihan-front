@@ -1,0 +1,13 @@
+<div class="content-block">
+  <div>
+    <p class="big-text">{{match.etime | date:'d MMMM y'}}</p>
+    <p class="big-text">{{match.ctime | date:'HH:mm'}}-{{match.etime | date:'HH:mm'}}</p>
+  </div>
+  <div class="results">
+    <div *ngFor="let result of results;">
+      <div class="row" >
+        <app-result-row [result]="result" [matchInfo]="false"></app-result-row>
+      </div>
+    </div>
+  </div>
+</div>

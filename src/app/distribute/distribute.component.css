@@ -1,0 +1,102 @@
+.mini-text{
+  text-align: left;
+  line-height: 0;
+}
+.distribute{
+  padding-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.button{
+  align-self: center;
+  border-radius: 15px;
+  border: none;
+  text-decoration: none;
+  background-color: #f8c018;
+  height: 50px;
+
+}
+.button p{
+  font-weight: bold;
+  line-height: 0;
+  color: #2a2a2a;
+}
+.all{
+  padding-top: 0.5em;
+}
+.avatar{
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
+}
+
+.player{
+  margin: 2%;
+  min-height: 250px;
+  width: 300px;
+  border-radius: 75px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #242d4a;
+}
+.factions{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.start-content{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.key-value-block{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+.factions{
+  width: 300px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.start-content .mini-text{
+  text-align: center;
+}
+.start{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.scoreCount input{
+  background-color: #0a1129;
+  border: none;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+.buttons{
+  display: flex;
+  width: 300px;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+}
+.factions-label{
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.faction-p{
+  display: flex;
+  flex-direction: column;
+}
+/*.buttons button{*/
+/*  margin: 5%;*/
+/*}*/

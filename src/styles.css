@@ -1,1 +1,67 @@
 /* You can add global styles to this file, and also import other style files */
+:root{
+  --smaj-green : #53e19e;
+  --smaj-red : #d32f18;
+  --smaj-background : #22223e;
+  --smaj-content-background : #0a1129;
+}
+body{
+  background-color: var(--smaj-background);
+  font-family: TTNorms,sans-serif;
+  font-weight: 700;
+  margin: 0;
+}
+p{
+  color: white;
+}
+a{
+  color: white;
+}
+.normal-text{
+  font-size: 25px;
+  /*line-height: 0;*/
+  text-align: center;
+}
+.big-text{
+  font-size: 50px;
+  line-height: 0;
+  font-weight: 700;
+  text-align: center;
+}
+.mini-text{
+  font-size: 17px;
+  font-weight: 700;
+  text-align: center;
+}
+.content-block{
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  background-color: var(--smaj-content-background);
+  /*TODO*/
+  width: 1024px;
+  margin: 0 auto 30px;
+}
+a{
+  text-decoration: none
+}
+.selectable:hover{
+  background:#242d4a
+}
+@media screen and (max-width: 767px){
+  .content-block {
+    width: 100%
+  }
+  .normal-text{
+    font-size: 15px;
+  }
+  .big-text{
+    font-size: 25px;
+    font-weight: 700;
+  }
+  .mini-text{
+    font-size: 10px;
+    font-weight: 700;
+  }
+}
+
