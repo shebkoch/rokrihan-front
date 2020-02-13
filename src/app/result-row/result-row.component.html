@@ -1,7 +1,7 @@
 <a [href]="'match/'+result?.matchEntity?.id">
   <div class="selectable result-content">
     <div *ngIf="!matchInfo" class="player">
-      <img class="avatar" [src]="this.styleService.getAvatar(result?.playerEntity)">
+      <img class="avatar" [src]="this.fileService.getAvatar(result?.playerEntity.id)">
       <p class="name normal-text">{{result?.playerEntity?.name}}</p>
     </div>
     <div *ngIf="matchInfo" class="key-value-block ago">
@@ -23,15 +23,12 @@
     </div>
     <div class="factions fact">
       <div class="faction-images">
-        <img class="avatar" src="{{imagePath(result?.factionEntity1)}}">
-        <img class="avatar right" src="{{imagePath(result?.factionEntity2)}}">
+        <img class="avatar" src="{{imagePath(result?.factionEntity)}}">
       </div>
-      <div class="factNames key-value-block">
-        <p class="mini-text"
-           [ngStyle]="{'color' : styleService.getColor(result?.factionEntity1)}"> {{result?.factionEntity1?.name}}</p>
-        <p class="mini-text"
-           [ngStyle]="{'color' : styleService.getColor(result?.factionEntity2)}">{{result?.factionEntity2?.name}}</p>
-      </div>
+<!--      <div class="factNames key-value-block">-->
+<!--        <p class="mini-text"-->
+<!--           [ngStyle]="{'color' : styleService.getColor(result?.factionEntity)}"> {{result?.factionEntity?.name}}</p>-->
+<!--      </div>-->
     </div>
     <div class="key-value-block bars-block">
       <p class="score mini-text">{{result?.score}}/{{result?.matchEntity?.winnerScore}}</p>

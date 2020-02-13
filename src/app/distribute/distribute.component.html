@@ -50,17 +50,13 @@
         <div class="player" *ngFor="let item of data">
           <div class="player-content">
             <div class="key-value-block">
-              <p class="mini-text">{{item.key.name}}</p>
-              <img class="avatar" [src]="getAvatar(item.key)">
+              <p class="mini-text">{{item.playerEntity.name}}</p>
+              <img class="avatar" [src]="getAvatar(item.playerEntity)">
             </div>
             <div class="factions">
               <div class="key-value-block">
-                <p class="mini-text">{{item.value.factionEntity1.name}}</p>
-                <img class="avatar" [src]="getImg(item.value.factionEntity1)">
-              </div>
-              <div class="key-value-block">
-                <p class="mini-text">{{item.value.factionEntity2.name}}</p>
-                <img class="avatar" [src]="getImg(item.value.factionEntity2)">
+                <p class="mini-text">{{item.factionEntity.name}}</p>
+                <img class="avatar" [src]="getImg(item.factionEntity)">
               </div>
             </div>
           </div>

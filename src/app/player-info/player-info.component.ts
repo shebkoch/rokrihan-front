@@ -6,6 +6,7 @@ import {StyleService} from '../style.service';
 import {idByLogin} from '../utils';
 import {ActivatedRoute} from '@angular/router';
 import {DomSanitizer} from '@angular/platform-browser';
+import {FileService} from '../file-service.service';
 
 
 @Component({
@@ -16,25 +17,29 @@ import {DomSanitizer} from '@angular/platform-browser';
 export class PlayerInfoComponent implements OnInit {
   public player: PlayerEntity;
   public lastResult: PlayerResultEntity = null;
-  private img: any;
+  public img: any;
   constructor(private activatedRoute: ActivatedRoute,
               private matchService: MatchService,
               public styleService : StyleService,
-              private sanitizer: DomSanitizer) {
+              private sanitizer: DomSanitizer,
+              private fileService: FileService
+              ) {
     // this.sss = 'sasasa';
 
     this.activatedRoute.params.subscribe(
       params => {
+        localStorage.setItem('login', 'shebup');
         let id = params['id'];
         let login = params['login'];
         if(id == null && login == null){
           login = localStorage.getItem('login');
         }
         if(login != null){
-          localStorage.setItem('login', login);
+
           id = idByLogin(login);
         }
         if (id != null) {
+          fileService.init(id);
           matchService.lastPlayerResult(id).subscribe((
             data: PlayerResultEntity) => {
               this.lastResult = data;
@@ -44,6 +49,7 @@ export class PlayerInfoComponent implements OnInit {
             data: PlayerEntity) => {
               this.player = data;
               this.getAvatar();
+
             }
           );
         }

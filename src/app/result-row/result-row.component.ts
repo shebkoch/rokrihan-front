@@ -4,6 +4,7 @@ import {PlayerResultEntity} from '../entity/PlayerResultEntity';
 import {FactionEntity} from '../entity/FactionEntity';
 import {dateNames} from '../utils';
 import {StyleService} from '../style.service';
+import {FileService} from '../file-service.service';
 
 @Component({
   selector: 'app-result-row',
@@ -19,7 +20,8 @@ export class ResultRowComponent implements OnInit {
   @Input() public winWidth;
   @Input() public factionWidth;
 
-  constructor( public styleService : StyleService) { }
+  constructor( public fileService : FileService,
+               private styleService : StyleService) { }
 
   ngOnInit() {
   }

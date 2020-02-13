@@ -2,19 +2,19 @@
   width: 25%;
 }
 .ago{
-  width: 25%;
+  width: 35%;
 }
 .win{
   width: 20%;
 }
 .fact{
-  width: 35%;
+  width: 15%;
 }
 .bars-block{
   width: 10%;
 }
 .result-content{
-  padding-left: 2em;
+  /*padding-left: 2em;*/
   padding-right: 2em;
   display: flex;
   flex-direction: row;
@@ -102,7 +102,7 @@
     height: 40px;
   }
   .fact{
-    width: 25%;
+    width: 15%;
   }
   .ago.key-value-block{
     line-height: 1;

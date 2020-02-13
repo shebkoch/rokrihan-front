@@ -1,0 +1,47 @@
+<div class="content-block">
+  <div class="content">
+    <div class="register">
+      <label class="image-upload-container btn btn-bwm">
+        <img class="avatar" src="assets/img/avatar_upload.jpg">
+        <input #imageInput
+               type="file"
+               accept="image/*"
+               (change)="processFile(imageInput)">
+      </label>
+      <form class="form"  (ngSubmit)="submitForm()">
+        <fieldset class="form-group">
+          <label>
+            <input
+              formControlName="username"
+              placeholder="Имя"
+              class="form-control form-control-lg"
+              type="text">
+          </label>
+        </fieldset>
+        <fieldset class="form-group">
+          <label>
+            <input
+              formControlName="password"
+              placeholder="Пароль"
+              class="form-control form-control-lg"
+              type="password" />
+          </label>
+        </fieldset>
+        <fieldset class="form-group">
+          <label>
+            <input
+              formControlName="key"
+              placeholder="Ключ"
+              class="form-control form-control-lg"
+              type="text" />
+          </label>
+        </fieldset>
+        <fieldset class="form-group">
+          <button class="btn selectable" type="submit">
+            Войти
+          </button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+</div>

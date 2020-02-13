@@ -76,11 +76,13 @@ export class DistributeComponent implements OnInit {
   }
 
   getAvatar(player: PlayerEntity) {
-    return this.matchService.playerInfo(player.id).subscribe(blob => {
-      // @ts-ignore
-      let objectURL = 'data:image/jpeg;base64,' + blob.avatar;
-      this.img = this.sanitizer.bypassSecurityTrustUrl(objectURL);
-    });
+    let needed;
+    for (let i in this.data){
+      if(this.data[i].playerEntity.id == player.id)
+        needed = i;
+    }
+    let objectURL = 'data:image/jpeg;base64,' + this.data[needed].playerInfoEntity.avatar;
+    return  this.sanitizer.bypassSecurityTrustUrl(objectURL);
   }
 
   getImg(faction: FactionEntity) {
@@ -168,9 +170,8 @@ export class DistributeComponent implements OnInit {
     for (let i = 0; i < this.data.length; i++) {
       let item = this.data[i];
       let entity: any = {};
-      entity.playerId = item.key.id;
-      entity.faction1Id = item.value.factionEntity1.id;
-      entity.faction2Id = item.value.factionEntity2.id;
+      entity.playerId = item.playerEntity.id;
+      entity.factionId = item.factionEntity.id;
       entity.score = item.score;
       entity.winner = item.checked;
       if(entity.winner == null)entity.winner = false;

@@ -6,7 +6,7 @@
         <p class="time normal-text">{{match?.matchEntity?.etime | date:'d MMMM y'}}</p>
         <p class="rating normal-text">{{match?.matchEntity?.rating ? 'Рейтинг' : 'Паблик' }}</p>
         <div class="players" *ngFor="let playerResult of match?.playerResultEntities">
-          <img class="avatar {{playerResult?.winner? 'winner':''}}" [src]="styleService.getAvatar(playerResult.playerEntity)">
+          <img class="avatar {{playerResult?.winner? 'winner':''}}" [src]="fileService.getAvatar(playerResult.playerEntity.id)">
         </div>
       </div>
       </a>

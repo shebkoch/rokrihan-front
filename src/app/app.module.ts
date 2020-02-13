@@ -17,11 +17,15 @@ import {MatchComponent} from './match/match.component';
 import {registerLocaleData} from '@angular/common';
 import localeRu from '@angular/common/locales/ru';
 import { DistributeComponent } from './distribute/distribute.component'
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { FactionsComponent } from './factions/factions.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule,
-  MatSortModule, MatTableModule } from "@angular/material";
+import {
+  MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, MatSelectModule,
+  MatSortModule, MatTableModule
+} from '@angular/material';
+import { RegisterComponent } from './register/register.component';
+import {DeviceDetectorModule} from 'ngx-device-detector';
 registerLocaleData(localeRu, 'ru');
 @NgModule({
   declarations: [
@@ -37,6 +41,7 @@ registerLocaleData(localeRu, 'ru');
     MatchComponent,
     DistributeComponent,
     FactionsComponent,
+    RegisterComponent,
   ],
   exports:[
     MatSortModule
@@ -60,11 +65,15 @@ registerLocaleData(localeRu, 'ru');
       {path: 'play', component: DistributeComponent},
       {path: 'factions', component: FactionsComponent},
       {path: 'matches', component: MatchesComponent},
+      {path: 'register', component: RegisterComponent},
       {path: '', component: DistributeComponent},
 
     ]),
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    DeviceDetectorModule.forRoot()
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'ru' }

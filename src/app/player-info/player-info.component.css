@@ -27,10 +27,14 @@
   line-height: 0;
 }
 .best{
-  max-width: 250px;
+  max-width: 370px;
   line-height: inherit;
-  font-size: 35px;
 }
 .big-text{
   line-height: inherit;
+}
+@media screen and (max-width: 767px){
+  .best {
+    display: none;
+  }
 }

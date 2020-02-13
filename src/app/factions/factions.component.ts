@@ -12,7 +12,6 @@ import {MatSort, MatTableDataSource} from '@angular/material';
 })
 export class FactionsComponent implements OnInit {
 
-  public factions: any[];
   public dataSource = new MatTableDataSource<any>();
   public displayedColumns = ['name', 'matchCount', 'winCount', 'score'];
 
@@ -22,8 +21,12 @@ export class FactionsComponent implements OnInit {
               private styleService: StyleService) {
       matchService.factions().subscribe((
         data: any) => {
-          this.factions = data;
-          this.dataSource.data = this.factions;
+          let factions = [];
+          for(let factCombo of data){
+            factions.push(factCombo.factionEntity1);
+            factions.push(factCombo.factionEntity2);
+          }
+          this.dataSource.data = factions;
         }
       );
   }

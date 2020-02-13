@@ -10,8 +10,8 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
   providedIn: 'root'
 })
 export class MatchService {
-  // serverUrl = 'http://193.187.173.223:8080/smaj/';
-  serverUrl = 'http://localhost:8080/';
+   serverUrl = 'http://151.248.125.142:8080/rokrihan/';
+  // serverUrl = 'http://localhost:8080/';
   lastPlayerResultUrl = this.serverUrl+'last_info/';
   resultsUrl = this.serverUrl + 'results/';
   playersUrl = this.serverUrl+'players/';
@@ -21,8 +21,9 @@ export class MatchService {
   matchesUrl = this.serverUrl+'matches/';
   factionsUrl = this.serverUrl+'factions';
   distributeUrl = this.serverUrl+'distribute';
-  startUrl = this.serverUrl+'/match/';
-
+  startUrl = this.serverUrl+'match/';
+  mates_url = '/all_mates/';
+  best_in_team = this.serverUrl + 'best/in/team/';
   httpHeaders:HttpHeaders = new HttpHeaders();
 
   constructor(private http: HttpClient) {
@@ -67,6 +68,12 @@ export class MatchService {
     return this.http.post(this.distributeUrl, data);
   }
   public start(isEnd:boolean, data:any) : Observable<object>{
-    return this.http.post(this.startUrl+isEnd, data);
+    return this.http.post(this.startUrl, data);
+  }
+  public allMates(id) {
+    return this.http.get(this.playerUrl+id+this.mates_url);
+  }
+  public bestInTeam(id) {
+    return this.http.get(this.best_in_team+id);
   }
 }

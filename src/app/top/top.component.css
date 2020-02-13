@@ -10,21 +10,61 @@
 app-player-row{
   padding: 1% 0;
 }
-.place{
+a{
+  text-decoration: none
 }
-.player {
-  width: 180px;
-}
-.mmr{
+.content{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 
 }
-.win{
-  width: 50px;
+.player{
+  display: flex;
+  flex-direction: row;
 }
-.match{
-  width: 50px;
+.avatar{
+  border-radius: 50%;
+  width: 75px;
+  height: 75px;
 }
-.faction{
-  width: 200px;
+.name{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+table{
+  width: 100%;
+  color: var(--smaj-content-background);
+}
+
+td{
+  text-align: center;
+  width: 10%;
+  padding: 0 5%;
+  color: var(--smaj-content-background);
+}
+td p{
+  text-align: left;
+}
+td.mat-cell{
+  border-bottom-style: none;
+}
+.mat-table{
+  background: var(--smaj-content-background)!important;
+}
+th.mat-header-cell{
+  border-bottom-style: none;
+}
+. mat-header-cell {
+  text-align: right;
+  justify-content: flex-end;
+}
+@media screen and (max-width: 767px){
+  .avatar{
+    width: 40px;
+    height: 40px;
+  }
+
 }
 

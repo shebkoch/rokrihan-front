@@ -10,7 +10,7 @@ export class StyleService {
   constructor() { }
 
   public getImagePath(faction: FactionEntity): string {
-    return `assets/img/faction/${faction.name}.png`;
+    return `assets/img/faction/${faction.id}.png`;
   }
   public getColor(faction: FactionEntity){
     if(faction == null) return null;
@@ -21,8 +21,6 @@ export class StyleService {
       case 'Ползучий клан': return  '#ffd641';
     }
   }
-  public getAvatar(player: PlayerEntity) {
-    if(player == null) return player;
-    return `assets/img/player/${player.name}.jpg`;
-  }
+
+
 }

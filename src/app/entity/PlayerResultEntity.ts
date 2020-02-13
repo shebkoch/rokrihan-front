@@ -17,6 +17,7 @@ export class PlayerResultEntity {
   private _factionEntity2: FactionEntity;
   private _matchEntity: MatchEntity;
   private _playerEntity: PlayerEntity;
+  factionEntity: FactionEntity;
 
 
   get id(): number {
